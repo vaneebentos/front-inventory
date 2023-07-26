@@ -1,0 +1,80 @@
+<!-- generamos el div padre o principal-->
+
+<div class="dashboard-container" [class.is-mobile] ="mobileQuery.matches">
+    <!-- mat es un componente de angular material,para usar las herramientas 
+    que ya trae -->
+
+    <mat-toolbar color="primary" class="dashboard-toolbar">
+
+        <button mat-icon-button (click)="snav.toggle ()"><mat-icon>menu</mat-icon></button>
+
+        <h1 class="app-name">S-Invetory</h1>
+        <!-- es para que el valor del contenido se alinie hasta el final 
+       o hacia la derecha  -->
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+        
+        <!-- le incamos que a la derecha separe 20 px o un margen de 20px-->
+            <ul fxLayout="row" fxLayoutGap="20px">
+
+                <li>
+
+                    <button mat-icon-button>
+
+                        <!-- help_outlime es el icono de ayuda-->
+                        <mat-icon>help_outline</mat-icon>
+                    </button>
+                </li>
+
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <!-- con person_outline se llama al icono de persona -->
+                      <mat-icon>person_outline</mat-icon>  
+                    </button>
+
+                    <mat-menu #menu="matMenu"></mat-menu>
+                    <button mat-menu-item>
+                        <mat-icon>exit_to_app</mat-icon>
+                        Cerrar Sesiòn 
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar>
+
+    <!-- empieza sidenav-->
+
+    <mat-sidenav-container class="sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0 ">
+                <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over': 'side' "
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+           
+            <mat-nav-list>
+                <!-- profile -->
+                <div class="profile-card">
+                    <div class="header">
+                        <h2>Alfredo Leal </h2>
+                        <h4>alfredo@gmail.com</h4>
+                    </div>
+                </div>
+                <!-- este crea una division -->
+                <mat-divider></mat-divider>
+
+                <!-- etiqueta de link-->
+                <a mat-list-item [routerLink]="nav.router" *ngFor="let nav of menuNav ">
+                    <mat-icon class="icono"> {{nav.icon}}</mat-icon>
+                    {{nav.name}}
+                </a>
+
+            </mat-nav-list>
+        </mat-sidenav>
+        <!-- es para que salga en el medio de la platalla el home works -->
+        <mat-sidenav-content>
+            <router-outlet> </router-outlet>
+        </mat-sidenav-content>
+
+    </mat-sidenav-container>
+
+    <router-outlet> </router-outlet>
+</div>
+
+

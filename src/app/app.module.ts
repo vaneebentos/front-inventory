@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+// Importa el módulo de animaciones de Angular:
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
     
   ],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     DashboardModule
   ],

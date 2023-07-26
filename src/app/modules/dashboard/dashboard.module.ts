@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './pages/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 
 /* Archivos  .modul que contiene todos los modulos
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     RouterModule
   ]
 })

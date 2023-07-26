@@ -1,0 +1,50 @@
+.dashboard-container{
+    display: flex;  /* es para ajustar las medidas de la pantalla al actualizar los datos*/
+
+    flex-direction: column; /* es para posicionar los elementos de arriba y abajo*/
+
+    position: absolute; /* este permite que la app este en primer plano antes que otra sin importar el div que se presente*/
+
+    top: 0; /*MARGEN SUPERIOR*/
+
+    bottom:0 ; /*margen inferior*/
+
+    left: 0;
+    right: 0;
+}
+
+
+.is-mobile .dashboard-toolbar{
+    position: fixed;
+    z-index: 2;
+}
+
+h1.app-name{
+    margin-left: 8px;
+    
+}
+
+.sidenav-container{
+    flex: 1;
+}
+
+.is-mobile.sidenav-container{
+    flex: 1 0 auto;
+}
+ul li {
+    list-style: none; /* es para eliminar los puntos que agrega la etiqueta li por defecto*/
+}
+
+.profile-card{
+    text-align: center;/*es para aliniear el texto en el centro*/
+    padding: 0 20px 20px 20px ;
+}
+
+.header{
+
+    margin-top: 20px;
+}
+
+.icono{
+    margin-right: 10px;
+}
